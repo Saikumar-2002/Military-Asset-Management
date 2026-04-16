@@ -1,0 +1,9 @@
+{
+  "name": "military-asset-management-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd military-asset-management/military-asset-management && npm install && npm run build && cd ../backend && npm install",
+    "start": "cd military-asset-management/backend && node index.js"
+  }
+}

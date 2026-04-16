@@ -3,9 +3,8 @@ services:
     name: military-asset-management
     env: node
     plan: free
-    rootDirectory: military-asset-management
-    buildCommand: "cd military-asset-management && npm install && npm run build && cd ../backend && npm install"
-    startCommand: "cd backend && node index.js"
+    buildCommand: "npm run build"
+    startCommand: "npm run start"
     envVars:
       - key: NODE_ENV
         value: production
