@@ -25,7 +25,7 @@ app.use(express.json());
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 // Support for production deployment (Serving Frontend)
-const frontendDist = path.join(__dirname, "../military-asset-management/dist");
+const frontendDist = path.join(__dirname, "../../military-asset-management/dist");
 app.use(express.static(frontendDist));
 
 function sha256(input) {

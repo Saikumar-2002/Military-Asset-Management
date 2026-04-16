@@ -4,6 +4,6 @@
   "private": true,
   "scripts": {
     "build": "cd military-asset-management/military-asset-management && npm install && npm run build && cd ../backend && npm install",
-    "start": "cd military-asset-management/backend && node index.js"
+    "start": "cd military-asset-management/backend && node src/index.js"
   }
 }

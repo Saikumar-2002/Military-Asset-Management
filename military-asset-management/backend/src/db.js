@@ -3,7 +3,7 @@ const Database = require("better-sqlite3");
 const bcrypt = require("crypto");
 
 // SQLite file persisted in backend/data
-const dbPath = path.join(__dirname, "data", "military.db");
+const dbPath = path.join(__dirname, "..", "data", "military.db");
 const db = new Database(dbPath);
 
 // Enable foreign keys (best effort)
