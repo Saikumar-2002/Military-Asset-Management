@@ -24,6 +24,10 @@ app.use(express.json());
 // Load env vars for local development.
 dotenv.config({ path: path.join(__dirname, ".env") });
 
+// Support for production deployment (Serving Frontend)
+const frontendDist = path.join(__dirname, "../military-asset-management/dist");
+app.use(express.static(frontendDist));
+
 function sha256(input) {
   return crypto.createHash("sha256").update(String(input)).digest("hex");
 }
@@ -76,11 +80,19 @@ app.use("/api/purchases", purchasesRouter);
 app.use("/api/transfers", transfersRouter);
 app.use("/api/assignments", assignmentsRouter);
 
-// For production builds you could serve the frontend here.
-// This assignment keeps frontend separately (recommended for local dev).
+// For production builds, serve index.html for any non-API routes (SPA support)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendDist, "index.html"), (err) => {
+    if (err) {
+      res.status(500).send("Frontend build not found. Run 'npm run build' in the frontend folder.");
+    }
+  });
+});
 
 const port = process.env.PORT ? Number(process.env.PORT) : 4000;
-app.listen(port, () => {
-  console.log(`MILITARY Asset API listening on http://localhost:${port}`);
+const host = "0.0.0.0"; // Required for many deployment platforms
+
+app.listen(port, host, () => {
+  console.log(`MILITARY Asset API listening on http://${host}:${port}`);
 });
 

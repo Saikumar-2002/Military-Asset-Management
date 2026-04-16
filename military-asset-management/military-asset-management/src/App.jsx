@@ -4,7 +4,7 @@ import Purchases from "./components/Purchases.jsx";
 import Transfers from "./components/Transfers.jsx";
 import Assignments from "./components/Assignments.jsx";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_BASE || "";
 
 function readToken() {
   try {
