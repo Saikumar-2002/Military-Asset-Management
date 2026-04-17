@@ -51,11 +51,11 @@ export default function Dashboard({ token, baseId }) {
           <span>SYSTEM TIME: {new Date().toISOString().substring(11, 19)} UTC</span>
         </div>
       </div>
-      
+
       {loading && <div style={{ color: "var(--accent-color)", fontFamily: "var(--header-font)", padding: "10px", border: "1px dashed var(--accent-color)", marginBottom: "1rem" }}>
-        <span className="pulse">>>> SCANNING INVENTORY SECTORS...</span>
+        <span className="pulse">  SCANNING INVENTORY SECTORS...</span>
       </div>}
-      
+
       {error && <div className="error-msg">{error}</div>}
 
       <div className="stats-grid">
@@ -64,7 +64,7 @@ export default function Dashboard({ token, baseId }) {
             <div className="stat-label">{k}</div>
             <div className="stat-value">{totals[k]}</div>
             <div style={{ height: "2px", background: "rgba(0, 255, 202, 0.1)", marginTop: "10px", position: "relative" }}>
-               <div style={{ position: "absolute", top: 0, left: 0, height: "100%", width: "70%", background: "var(--accent-color)", opacity: 0.3 }}></div>
+              <div style={{ position: "absolute", top: 0, left: 0, height: "100%", width: "70%", background: "var(--accent-color)", opacity: 0.3 }}></div>
             </div>
           </div>
         ))}
@@ -99,13 +99,13 @@ export default function Dashboard({ token, baseId }) {
           </tbody>
         </table>
       </div>
-      
+
       <div style={{ marginTop: "1rem", display: "flex", gap: "10px" }}>
         <div style={{ background: "rgba(0, 255, 202, 0.05)", padding: "4px 10px", borderRadius: "2px", fontSize: "0.7rem", color: "var(--secondary-text)", border: "1px solid var(--border-color)" }}>
-           LATENCY: 24ms
+          LATENCY: 24ms
         </div>
         <div style={{ background: "rgba(0, 255, 202, 0.05)", padding: "4px 10px", borderRadius: "2px", fontSize: "0.7rem", color: "var(--secondary-text)", border: "1px solid var(--border-color)" }}>
-           UPLINK: ACTIVE
+          UPLINK: ACTIVE
         </div>
       </div>
     </div>
