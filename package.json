@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "install-all": "npm install --prefix military-asset-management/military-asset-management && npm install --prefix military-asset-management/backend",
-    "build": "npm run build --prefix military-asset-management/military-asset-management",
+    "build": "npm run install-all && npm run build --prefix military-asset-management/military-asset-management",
     "start": "npm start --prefix military-asset-management/backend",
     "dev-frontend": "npm run dev --prefix military-asset-management/military-asset-management",
     "dev-backend": "npm run dev --prefix military-asset-management/backend"
