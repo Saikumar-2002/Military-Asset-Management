@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build": "vite build"
   },
   "dependencies": {
     "better-sqlite3": "^11.2.0",
